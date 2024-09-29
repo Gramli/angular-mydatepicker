@@ -4,7 +4,7 @@
 
 ---
 
-**Note:** This repository was originally forked from `gramli/angular-mydatepicker`.
+**Note:** This repository was originally forked from `nodro7/angular-mydatepicker`.
 
 This updated version uses `"compilationMode": "partial"` for use in Ivy-enabled applications.
 
@@ -25,7 +25,7 @@ https://github.com/nodro7/angular-mydatepicker
 ## Install
 
 ```console
-npm install @gramli/angular-mydatepicker
+npm install gramli-angular-mydatepicker
 ```
 ---
 
@@ -74,7 +74,7 @@ Basic idea to create this library was to make it as configurable as possible. Th
 
 To install this component to an external project, follow the procedure:
 
-1. `npm install @gramli/angular-mydatepicker`
+1. `npm install gramli-angular-mydatepicker`
 
 2. Add `AngularMyDatePickerModule` import to your `@NgModule` as follows:
 
@@ -82,7 +82,7 @@ To install this component to an external project, follow the procedure:
     import { BrowserModule } from '@angular/platform-browser';
     import { NgModule } from '@angular/core';
     import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-    import { AngularMyDatePickerModule } from '@gramli/angular-mydatepicker';
+    import { AngularMyDatePickerModule } from 'gramli-angular-mydatepicker';
 
     @NgModule({
       declarations: [

@@ -6,10 +6,6 @@
 
 **Note:** This repository was originally forked from `nodro7/angular-mydatepicker`.
 
-This updated version uses `"compilationMode": "partial"` for use in Ivy-enabled applications.
-
-If you need a version compatible with an older (View Engine) Angular application, the original package can be found [here.](https://www.npmjs.com/package/angular-mydatepicker)
-
 ## Angular Versions
 
 The following list describes the compatibility with Angular:
@@ -17,6 +13,7 @@ The following list describes the compatibility with Angular:
 | Angular Notifier | Angular | Compilation        |
 | ---------------- | ------- | ------------------ |
 | `0.15.x`           | `17.x`  | Ivy (partial mode) |
+| `0.16.x`           | `18.x`  | Ivy (partial mode) |
 
 For older versions visit:
 https://github.com/nodro7/angular-mydatepicker

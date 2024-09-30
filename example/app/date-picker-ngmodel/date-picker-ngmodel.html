@@ -279,19 +279,19 @@
             <td>
                 <form>
                   <div class="input-group inputGroup">
-                    <input class="form-control" placeholder="{{!myDatePickerOptions.dateRange ? 'Select a date' : 'Select a date range'}}" angular-mydatepicker name="mydate"
+                    <input class="form-control my-1" placeholder="{{!myDatePickerOptions.dateRange ? 'Select a date' : 'Select a date range'}}" angular-mydatepicker name="mydate"
                            [(ngModel)]="model" [options]="myDatePickerOptions" [defaultMonth]="defMonth" [locale]="locale" #dp="angular-mydatepicker"
                            (dateChanged)="onDateChanged($event)" (calendarViewChanged)="onCalendarViewChanged($event)"
                            (calendarToggle)="onCalendarToggle($event)" (inputFieldChanged)="onInputFieldChanged($event)"
                            (rangeDateSelection)="onRangeDateSelection($event)" (viewActivated)="onViewActivated($event)" 
                            [attr.disabled]="disabled?'':null" autocomplete="off"/>
                     <div class="input-group-append">
-                      <button type="button" class="btn btn-secondary" (click)="dp.clearDate()">
+                      <button type="button" class="btn btn-secondary mx-0" (click)="dp.clearDate()">
                         <i class="fa fa-close"></i>
                       </button>
                     </div>
                     <div class="input-group-append">
-                      <button type="button" class="btn btn-secondary" (click)="dp.toggleCalendar()">
+                      <button type="button" class="btn btn-secondary mx-0" (click)="dp.toggleCalendar()">
                         <i class="fa fa-calendar-o"></i>
                       </button>
                     </div>

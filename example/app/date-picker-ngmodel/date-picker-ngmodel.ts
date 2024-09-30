@@ -1,5 +1,5 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
-import {AngularMyDatePickerDirective, DefaultView, IAngularMyDpOptions, IMyCalendarViewChanged, IMyDate, IMyDateModel, IMyDefaultMonth, IMyInputFieldChanged, IMyMarkedDate, IMyRangeDateSelection, CalAnimation, ActiveView} from '../../../projects/angular-mydatepicker/src/public-api';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { AngularMyDatePickerDirective, DefaultView, IAngularMyDpOptions, IMyCalendarViewChanged, IMyDate, IMyDateModel, IMyDefaultMonth, IMyInputFieldChanged, IMyMarkedDate, IMyRangeDateSelection, CalAnimation, ActiveView } from '../../../projects/angular-mydatepicker/src/public-api';
 
 @Component({
   selector: 'date-picker-ngmodel',
@@ -27,11 +27,11 @@ export class DatePickerNgmodel implements OnInit {
     disableHeaderButtons: true,
     showWeekNumbers: false,
     disableDateRanges: [
-      {begin: {year: 2016, month: 10, day: 5}, end: {year: 2016, month: 10, day: 7}},
-      {begin: {year: 2016, month: 10, day: 10}, end: {year: 2016, month: 10, day: 12}}
+      { begin: { year: 2016, month: 10, day: 5 }, end: { year: 2016, month: 10, day: 7 } },
+      { begin: { year: 2016, month: 10, day: 10 }, end: { year: 2016, month: 10, day: 12 } }
     ],
-    disableUntil: {year: 0, month: 0, day: 0},
-    disableSince: {year: 0, month: 0, day: 0},
+    disableUntil: { year: 0, month: 0, day: 0 },
+    disableSince: { year: 0, month: 0, day: 0 },
     disableWeekdays: [],
     markDates: [],
     markWeekends: <IMyMarkedDate>{},
@@ -45,13 +45,13 @@ export class DatePickerNgmodel implements OnInit {
     dateRangeDatesDelimiter: " - ",
     defaultView: DefaultView.Date,
     showFooterToday: false,
-    calendarAnimation: {in: CalAnimation.None, out: CalAnimation.None},
+    calendarAnimation: { in: CalAnimation.None, out: CalAnimation.None },
     rtl: false,
     stylesData:
-      {
-        selector: '',
-        styles: ''
-      }
+    {
+      selector: '',
+      styles: ''
+    }
   };
 
   @ViewChild('dp', { static: true }) ngxdp: AngularMyDatePickerDirective;
@@ -68,7 +68,7 @@ export class DatePickerNgmodel implements OnInit {
     defMonth: '',
     overrideSelection: false
   };
-  
+
   public selectorSizes: Array<string> = new Array('266px x 266px', '200px x 220px', '260px x 290px');
   public defaultViews: Array<string> = new Array('date', 'month', 'year');
   public calAnimations: Array<string> = new Array('None', 'Fade', 'ScaleTop-ScaleCenter', 'ScaleCenter-ScaleTop', 'Rotate', 'FlipDiagonal');
@@ -125,7 +125,7 @@ export class DatePickerNgmodel implements OnInit {
   ];
 
 
-  constructor() {}
+  constructor() { }
 
   clearDate(): void {
     this.ngxdp.clearDate();
@@ -138,7 +138,7 @@ export class DatePickerNgmodel implements OnInit {
       return;
     }
 
-    this.model = {isRange: false, singleDate: {jsDate: new Date()}};
+    this.model = { isRange: false, singleDate: { jsDate: new Date() } };
   }
 
   setDateRange(): void {
@@ -152,7 +152,7 @@ export class DatePickerNgmodel implements OnInit {
     const end: Date = new Date();
     end.setDate(end.getDate() + 2);
 
-    this.model = {isRange: true, dateRange: {beginJsDate: begin, endJsDate: end}};
+    this.model = { isRange: true, dateRange: { beginJsDate: begin, endJsDate: end } };
   }
 
   onOpenSelectorTopOfInput(checked: boolean): void {
@@ -188,7 +188,7 @@ export class DatePickerNgmodel implements OnInit {
   onDisableToday(checked: boolean): void {
     const d: Date = new Date();
     const copy = this.getCopyOfOptions();
-    copy.disableDates = checked ? [{year: d.getFullYear(), month: d.getMonth() + 1, day: d.getDate()}] : [];
+    copy.disableDates = checked ? [{ year: d.getFullYear(), month: d.getMonth() + 1, day: d.getDate() }] : [];
     this.myDatePickerOptions = copy;
   }
 
@@ -196,7 +196,7 @@ export class DatePickerNgmodel implements OnInit {
     const d: Date = new Date();
     const copy = this.getCopyOfOptions();
     copy.markDates = checked ? [{
-      dates: [{year: d.getFullYear(), month: d.getMonth() + 1, day: d.getDate()}],
+      dates: [{ year: d.getFullYear(), month: d.getMonth() + 1, day: d.getDate() }],
       color: '#C30000'
     }] : [];
     this.myDatePickerOptions = copy;
@@ -204,7 +204,7 @@ export class DatePickerNgmodel implements OnInit {
 
   onMarkWeekends(checked: boolean): void {
     const copy = this.getCopyOfOptions();
-    copy.markWeekends = checked ? {marked: true, color: 'blue'} : {marked: false, color: ''};
+    copy.markWeekends = checked ? { marked: true, color: 'blue' } : { marked: false, color: '' };
     this.myDatePickerOptions = copy;
   }
 
@@ -224,12 +224,12 @@ export class DatePickerNgmodel implements OnInit {
     const d: Date = new Date();
     const copy = this.getCopyOfOptions();
     const dates: Array<IMyDate> = [];
-    dates.push({year: d.getFullYear(), month: d.getMonth() + 1, day: d.getDate()});
+    dates.push({ year: d.getFullYear(), month: d.getMonth() + 1, day: d.getDate() });
 
     d.setDate(d.getDate() + 1);
-    dates.push({year: d.getFullYear(), month: d.getMonth() + 1, day: d.getDate()});
+    dates.push({ year: d.getFullYear(), month: d.getMonth() + 1, day: d.getDate() });
 
-    dates.push({year: 2017, month: 6, day: 1});
+    dates.push({ year: 2017, month: 6, day: 1 });
 
     copy.highlightDates = checked ? dates : [];
     this.myDatePickerOptions = copy;
@@ -285,7 +285,7 @@ export class DatePickerNgmodel implements OnInit {
 
   onDisable24Day(checked: boolean): void {
     const copy = this.getCopyOfOptions();
-    copy.disableDates = checked ? [{year: 0, month: 0, day: 24}] : [];
+    copy.disableDates = checked ? [{ year: 0, month: 0, day: 24 }] : [];
     this.myDatePickerOptions = copy;
   }
 
@@ -299,7 +299,7 @@ export class DatePickerNgmodel implements OnInit {
     const copy = this.getCopyOfOptions();
     const d: Date = new Date();
     d.setDate(d.getDate() - 1);
-    copy.disableUntil = checked ? {year: d.getFullYear(), month: d.getMonth() + 1, day: d.getDate()} : {year: 0, month: 0, day: 0};
+    copy.disableUntil = checked ? { year: d.getFullYear(), month: d.getMonth() + 1, day: d.getDate() } : { year: 0, month: 0, day: 0 };
     this.myDatePickerOptions = copy;
   }
 
@@ -307,7 +307,7 @@ export class DatePickerNgmodel implements OnInit {
     const copy = this.getCopyOfOptions();
     const d: Date = new Date();
     d.setDate(d.getDate() + 1);
-    copy.disableSince = checked ? {year: d.getFullYear(), month: d.getMonth() + 1, day: d.getDate()} : {year: 0, month: 0, day: 0};
+    copy.disableSince = checked ? { year: d.getFullYear(), month: d.getMonth() + 1, day: d.getDate() } : { year: 0, month: 0, day: 0 };
     this.myDatePickerOptions = copy;
   }
 
@@ -318,7 +318,7 @@ export class DatePickerNgmodel implements OnInit {
   }
 
   onShowFooterBar(checked: boolean) {
-    let copy = this.getCopyOfOptions();
+    const copy = this.getCopyOfOptions();
     copy.showFooterToday = checked;
     this.myDatePickerOptions = copy;
   }
@@ -328,16 +328,16 @@ export class DatePickerNgmodel implements OnInit {
 
     const d: Date = new Date();
     d.setDate(d.getDate() - 1);
-    let yesterday: IMyDate = {year: d.getFullYear(), month: d.getMonth() + 1, day: d.getDate()};
+    let yesterday: IMyDate = { year: d.getFullYear(), month: d.getMonth() + 1, day: d.getDate() };
 
     d.setDate(d.getDate() + 1);
-    let today: IMyDate = {year: d.getFullYear(), month: d.getMonth() + 1, day: d.getDate()};
-    
-    d.setDate(d.getDate() + 1);
-    let tomorrow: IMyDate = {year: d.getFullYear(), month: d.getMonth() + 1, day: d.getDate()};
+    let today: IMyDate = { year: d.getFullYear(), month: d.getMonth() + 1, day: d.getDate() };
 
-    copy.disableDates = checked ? [{dates: [yesterday, today, tomorrow], styleClass: 'disabledDates'}] : [];
-    copy.stylesData = 
+    d.setDate(d.getDate() + 1);
+    let tomorrow: IMyDate = { year: d.getFullYear(), month: d.getMonth() + 1, day: d.getDate() };
+
+    copy.disableDates = checked ? [{ dates: [yesterday, today, tomorrow], styleClass: 'disabledDates' }] : [];
+    copy.stylesData =
     {
       selector: 'dp1',
       styles: this.disableAndMarkOwnStyles()
@@ -351,20 +351,20 @@ export class DatePickerNgmodel implements OnInit {
 
     const d: Date = new Date();
     d.setDate(d.getDate() + 2);
-    const yesterday: IMyDate = {year: d.getFullYear(), month: d.getMonth() + 1, day: d.getDate()};
+    const yesterday: IMyDate = { year: d.getFullYear(), month: d.getMonth() + 1, day: d.getDate() };
 
     d.setDate(d.getDate() + 1);
-    const today: IMyDate = {year: d.getFullYear(), month: d.getMonth() + 1, day: d.getDate()};
-    
+    const today: IMyDate = { year: d.getFullYear(), month: d.getMonth() + 1, day: d.getDate() };
+
     d.setDate(d.getDate() + 1);
-    const tomorrow: IMyDate = {year: d.getFullYear(), month: d.getMonth() + 1, day: d.getDate()};
+    const tomorrow: IMyDate = { year: d.getFullYear(), month: d.getMonth() + 1, day: d.getDate() };
 
     copy.markDates = checked ? [
-      {dates: [yesterday], styleClass: 'pilatesDates'}, 
-      {dates: [today], styleClass: 'boxingDates'},
-      {dates: [tomorrow], color: 'red', styleClass: 'pilatesDatesAndBoxingDates'}
+      { dates: [yesterday], styleClass: 'pilatesDates' },
+      { dates: [today], styleClass: 'boxingDates' },
+      { dates: [tomorrow], color: 'red', styleClass: 'pilatesDatesAndBoxingDates' }
     ] : [];
-    copy.stylesData = 
+    copy.stylesData =
     {
       selector: 'dp1',
       styles: this.disableAndMarkOwnStyles()
@@ -423,22 +423,22 @@ export class DatePickerNgmodel implements OnInit {
     const copy = this.getCopyOfOptions();
 
     if (animation === 'None') {
-      copy.calendarAnimation = {in: CalAnimation.None, out: CalAnimation.None};
+      copy.calendarAnimation = { in: CalAnimation.None, out: CalAnimation.None };
     }
     else if (animation === 'Fade') {
-      copy.calendarAnimation = {in: CalAnimation.Fade, out: CalAnimation.Fade};
+      copy.calendarAnimation = { in: CalAnimation.Fade, out: CalAnimation.Fade };
     }
     else if (animation === 'ScaleTop-ScaleCenter') {
-      copy.calendarAnimation = {in: CalAnimation.ScaleTop, out: CalAnimation.ScaleCenter};
+      copy.calendarAnimation = { in: CalAnimation.ScaleTop, out: CalAnimation.ScaleCenter };
     }
     else if (animation === 'ScaleCenter-ScaleTop') {
-      copy.calendarAnimation = {in: CalAnimation.ScaleCenter, out: CalAnimation.ScaleTop};
+      copy.calendarAnimation = { in: CalAnimation.ScaleCenter, out: CalAnimation.ScaleTop };
     }
     else if (animation === 'Rotate') {
-      copy.calendarAnimation = {in: CalAnimation.Rotate, out: CalAnimation.Rotate};
+      copy.calendarAnimation = { in: CalAnimation.Rotate, out: CalAnimation.Rotate };
     }
     else if (animation === 'FlipDiagonal') {
-      copy.calendarAnimation = {in: CalAnimation.FlipDiagonal, out: CalAnimation.FlipDiagonal};
+      copy.calendarAnimation = { in: CalAnimation.FlipDiagonal, out: CalAnimation.FlipDiagonal };
     }
 
     this.myDatePickerOptions = copy;
@@ -449,7 +449,7 @@ export class DatePickerNgmodel implements OnInit {
     copy.stylesData.selector = 'dp1';
     copy.selectorHeight = '266px';
     copy.selectorWidth = '266px';
- 
+
     if (color === 'Default') {
       copy.stylesData.styles = '';
     }
@@ -1023,7 +1023,7 @@ export class DatePickerNgmodel implements OnInit {
     console.log('onDateChanged(): ', event);
 
     if (!event.isRange) {
-      let {date, jsDate, formatted, epoc} = event.singleDate;
+      let { date, jsDate, formatted, epoc } = event.singleDate;
       if (formatted !== '') {
         this.selectedTextNormal = 'Formatted: ' + formatted + ' - epoc timestamp: ' + epoc;
         this.validDate = true;
@@ -1034,7 +1034,7 @@ export class DatePickerNgmodel implements OnInit {
       }
     }
     else {
-      let {formatted} = event.dateRange;
+      let { formatted } = event.dateRange;
       if (formatted !== '') {
         this.selectedTextNormal = 'Formatted: ' + formatted;
         this.validDate = true;

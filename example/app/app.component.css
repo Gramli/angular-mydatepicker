@@ -6,7 +6,7 @@
   background-color: #EEE;
   height: 180px;
   border-bottom: 1px solid #CCC;
-  background: linear-gradient(to right, rgba(44,83,158,1) 0%,rgba(44,83,158,1) 100%);
+  background: linear-gradient(to right, #2c539e 0%,rgba(44,83,158,1) 100%);
   text-align: center;
 }
 

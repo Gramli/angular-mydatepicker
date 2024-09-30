@@ -278,20 +278,6 @@
         <tr>
             <td>
                 <form>
-                  <!-- bootstrap 3
-                    <div class="input-group">
-                        <input class="form-control" placeholder="{{!myDatePickerOptions.dateRange ? 'Select a date' : 'Select a date range'}}" angular-mydatepicker name="mydate"
-                               [(ngModel)]="model" [options]="myDatePickerOptions" [defaultMonth]="defMonth" [locale]="locale" #dp="angular-mydatepicker"
-                               (dateChanged)="onDateChanged($event)" (calendarViewChanged)="onCalendarViewChanged($event)"
-                               (calendarToggle)="onCalendarToggle($event)" (inputFieldChanged)="onInputFieldChanged($event)" [attr.disabled]="disabled?'':null" autocomplete="off"/>
-
-                        <span class="input-group-btn">
-                            <button type="button" class="btn btn-default" (click)="dp.clearDate()"><i class="glyphicon glyphicon-remove"></i></button>
-                            <button type="button" class="btn btn-default" (click)="dp.toggleCalendar()"><i class="glyphicon glyphicon-calendar"></i></button>
-                        </span>
-                    </div>
-                  -->
-
                   <div class="input-group inputGroup">
                     <input class="form-control" placeholder="{{!myDatePickerOptions.dateRange ? 'Select a date' : 'Select a date range'}}" angular-mydatepicker name="mydate"
                            [(ngModel)]="model" [options]="myDatePickerOptions" [defaultMonth]="defMonth" [locale]="locale" #dp="angular-mydatepicker"

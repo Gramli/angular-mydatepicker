@@ -3,18 +3,6 @@
     <td class="td">
 
       <form class="form" [formGroup]="myForm" (ngSubmit)="onSubmitReactiveForms()" novalidate>
-        <!-- boostrap 3
-          <div class="input-group">
-              <input class="form-control" placeholder="Select a date" angular-mydatepicker name="reactiveFormsDate" formControlName="myDate"
-                     [options]="myDatePickerOptions" #dp="angular-mydatepicker" autocomplete="off"/>
-
-              <span class="input-group-btn">
-                  <button type="button" class="btn btn-default" (click)="dp.clearDate()"><i class="glyphicon glyphicon-remove"></i></button>
-                  <button type="button" class="btn btn-default" (click)="dp.toggleCalendar()"><i class="glyphicon glyphicon-calendar"></i></button>
-              </span>
-          </div>
-        -->
-
         <div class="input-group">
           <input class="form-control" placeholder="Select a date" angular-mydatepicker name="reactiveFormsDate" formControlName="myDate"
                  [options]="myDatePickerOptions" #dp="angular-mydatepicker" autocomplete="off" (click)="toggleCalendar()"/>

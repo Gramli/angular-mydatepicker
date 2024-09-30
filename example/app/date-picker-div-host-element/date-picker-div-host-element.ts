@@ -1,5 +1,5 @@
-import {Component, OnInit, Renderer2,} from '@angular/core';
-import {IAngularMyDpOptions, IMyDateModel, IMyCalendarViewChanged} from '../../../projects/angular-mydatepicker/src/public-api';
+import {Component, OnInit,} from '@angular/core';
+import {IAngularMyDpOptions, IMyDateModel} from '../../../projects/angular-mydatepicker/src/public-api';
 
 @Component({
   selector: 'date-picker-div-host-element',
@@ -15,19 +15,19 @@ export class DatePickerDivHostElement implements OnInit {
 
   model: IMyDateModel = null;
 
-  constructor(private renderer: Renderer2) { }
+  constructor() { }
 
   ngOnInit(): void {
     console.log('onInit(): DatePickerDivHostElement');
   }
 
   setTodayDate(): void {
-    let d: Date = new Date();
+    const d: Date = new Date();
     this.model = {isRange: false, singleDate: {jsDate: d}, dateRange: null};
   }
 
   resetTomorrowDate(): void {
-    let d: Date = new Date();
+    const d: Date = new Date();
     d.setDate(d.getDate() + 1);
     this.model = {isRange: false, singleDate: {date: {year: d.getFullYear(), month: d.getMonth() + 1, day: d.getDate()}}, dateRange: null};
   }

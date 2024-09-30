@@ -24,9 +24,9 @@ export class DatePickerReactiveForms implements OnInit {
 
   ngOnInit(): void {
     console.log('onInit(): SampleDatePickerReacticeForms');
-    let d: Date = new Date();
+    const d: Date = new Date();
     d.setDate(d.getDate() + 2);
-    let model: IMyDateModel = {isRange: false, singleDate: {jsDate: d}, dateRange: null};
+    const model: IMyDateModel = {isRange: false, singleDate: {jsDate: d}, dateRange: null};
 
     this.myForm = this.formBuilder.group({
       myDate: [
@@ -52,17 +52,17 @@ export class DatePickerReactiveForms implements OnInit {
 
   setTodayDate(): void {
     // Set today using the setValue function
-    let date: Date = new Date();
-    let model: IMyDateModel = {isRange: false, singleDate: {jsDate: date}, dateRange: null};
+    const date: Date = new Date();
+    const model: IMyDateModel = {isRange: false, singleDate: {jsDate: date}, dateRange: null};
 
     this.myForm.setValue({myDate: model});
   }
 
   resetTomorrowDate(): void {
     // Reset date picker to specific date (tomorrow)
-    let date: Date = new Date();
+    const date: Date = new Date();
     date.setDate(date.getDate() + 1);
-    let model: IMyDateModel = {isRange: false, singleDate: {jsDate: date}, dateRange: null};
+    const model: IMyDateModel = {isRange: false, singleDate: {jsDate: date}, dateRange: null};
     this.myForm.reset({myDate: model});
   }
 

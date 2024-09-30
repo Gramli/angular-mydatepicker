@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+
+button {
+    background-color: #2c539e; /* Green */
+    border: none;
+    color: white;
+    padding: 8px 17px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 8px;
+    margin: 4px 2px;
+
+}
+
+button:hover{
+    background-color: white;
+    color: black;
+    border: 1px solid #2c539e; /* Green */
+}

@@ -48,7 +48,7 @@ export class DatePickerInline implements OnInit {
   }
 
   onInitToPastMonth(): void {
-    let d: Date = new Date();
+    const d: Date = new Date();
     d.setMonth(d.getMonth() - 1);
     this.model = {
       isRange: false, 
@@ -59,8 +59,8 @@ export class DatePickerInline implements OnInit {
   }
 
   onTodayPlus3(): void {
-    let today: Date = new Date();
-    let date: Date = new Date();
+    const today: Date = new Date();
+    const date: Date = new Date();
     date.setDate(date.getDate() + 3);
 
     this.model = {isRange: true, singleDate: null, dateRange: {
@@ -70,10 +70,10 @@ export class DatePickerInline implements OnInit {
   }
 
   onYesterdayPlus3(): void {
-    let today: Date = new Date();
+    const today: Date = new Date();
     today.setDate(today.getDate() - 1);
 
-    let date: Date = new Date();
+    const date: Date = new Date();
     date.setDate(date.getDate() + 2);
     
     this.model = {isRange: true, singleDate: null, dateRange: {
@@ -97,7 +97,7 @@ export class DatePickerInline implements OnInit {
       }
     }
     else {
-      let {formatted} = event.dateRange;
+      const {formatted} = event.dateRange;
       if (formatted !== '') {
         this.selectedTextNormal = 'Formatted: ' + formatted;
         this.validDate = true;

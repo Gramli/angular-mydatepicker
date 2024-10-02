@@ -1,8 +1,10 @@
 <h1 align="center">angular-mydatepicker</h1>
+<div align="center">
+  
+[![Build&Test](https://github.com/Gramli/angular-mydatepicker/actions/workflows/build_and_test.yml/badge.svg)](https://github.com/Gramli/angular-mydatepicker/actions/workflows/build_and_test.yml)
 
+</div>
 <h2 align="center">Angular datepicker and date range picker</h2>
-
----
 
 **Note:** This repository was originally forked from `nodro7/angular-mydatepicker`.
 

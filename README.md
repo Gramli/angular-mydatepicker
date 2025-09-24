@@ -17,6 +17,7 @@ The following list describes the compatibility with Angular:
 | `0.15.x`           | `17.x`  | Ivy (partial mode) |
 | `0.16.x`           | `18.x`  | Ivy (partial mode) |
 | `0.17.x`           | `19.x`  | Ivy (partial mode) |
+| `0.18.x`           | `20.x`  | Ivy (partial mode) |
 
 For older versions visit:
 https://github.com/nodro7/angular-mydatepicker

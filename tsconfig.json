@@ -7,10 +7,11 @@
     "sourceMap": true,
     "declaration": false,
     "module": "es2020",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "experimentalDecorators": true,
     "importHelpers": true,
     "target": "ES2022",
+    "skipLibCheck":true,
     "typeRoots": [
       "node_modules/@types"
     ],

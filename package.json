@@ -21,7 +21,7 @@
     "build": "ng build",
     "build-lib": "node scripts/delete-dist-folder.js && ng build AngularMyDatePicker --configuration production && node scripts/copy-artifacts.js",
     "build-example": "ng build --base-href=\"https://gramli.github.io/angular-mydatepicker/\"",
-    "test-lib": "node scripts/delete-test-output-folder.js && ng test --code-coverage=true AngularMyDatePicker",
+    "test-lib": "node scripts/delete-test-output-folder.js && ng test --code-coverage=true --browsers=ChromeHeadless --no-watch AngularMyDatePicker",
     "lint-lib": "ng lint AngularMyDatePicker"
   },
   "dependencies": {

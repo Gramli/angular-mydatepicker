@@ -1,15 +1,11 @@
 name: Publish to npm
 
 on:
-  pull_request:
-    branches:
-      - master
-    types:
-      - closed
+  release:
+    types: [created]
 
 jobs:
   publish:
-    if: github.event.pull_request.merged == true
     name: Publish to npm
     runs-on: ubuntu-latest
 

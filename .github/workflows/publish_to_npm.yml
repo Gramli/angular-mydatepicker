@@ -10,6 +10,11 @@ jobs:
     name: Publish to npm
     runs-on: ubuntu-latest
 
+    permissions:
+      id-token: write  # Required for OIDC
+      contents: read
+
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -29,6 +34,4 @@ jobs:
 
       - name: Publish to npm
         working-directory: ./dist/angular-mydatepicker
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npm publish --access public

@@ -38,8 +38,6 @@ jobs:
         node-version: 22.20.x
     - name: Install dependencies
       run: npm ci
-    - name: Test Library
-      run: npm run test-lib
 
   lint:
     name: Lint

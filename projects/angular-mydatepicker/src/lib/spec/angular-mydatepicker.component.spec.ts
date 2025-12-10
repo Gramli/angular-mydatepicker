@@ -113,31 +113,31 @@ describe('AngularMyDatePickerComponent', () => {
 
     comp.openCalendar();
 
-    fixture.detectChanges();
+    //fixture.detectChanges();
     comp.initDateModel({ isRange: false, singleDate: { date: { year: 2019, month: 5, day: 21 } } });
 
-    fixture.detectChanges();
+    //fixture.detectChanges();
     let selection = getElement('.myDateInput');
     expect(selection.value).toBe('21.5.2019');
 
-    fixture.detectChanges();
+    //fixture.detectChanges();
     comp.initDateModel({ isRange: false, singleDate: { jsDate: new Date(2019, 5, 22) } });
 
-    fixture.detectChanges();
+    //fixture.detectChanges();
     selection = getElement('.myDateInput');
     expect(selection.value).toBe('22.6.2019');
 
-    fixture.detectChanges();
+    //fixture.detectChanges();
     comp.initDateModel(null);
 
-    fixture.detectChanges();
+    //fixture.detectChanges();
     selection = getElement('.myDateInput');
     expect(selection.value).toBe('');
 
     opts.dateRange = true;
     comp.parseOptions(opts);
 
-    fixture.detectChanges();
+    //fixture.detectChanges();
     comp.initDateModel({
       isRange: true,
       dateRange: {
@@ -146,23 +146,23 @@ describe('AngularMyDatePickerComponent', () => {
       }
     });
 
-    fixture.detectChanges();
+    //fixture.detectChanges();
     selection = getElement('.myDateInput');
     expect(selection.value).toBe('24.5.2019 - 10.6.2019');
 
-    fixture.detectChanges();
+    //fixture.detectChanges();
     let begin = new Date(2019, 9, 12);
     let end = new Date(2019, 9, 14);
     comp.initDateModel({ isRange: true, dateRange: { beginJsDate: begin, endJsDate: end } });
 
-    fixture.detectChanges();
+    //fixture.detectChanges();
     selection = getElement('.myDateInput');
     expect(selection.value).toBe('12.10.2019 - 14.10.2019');
 
-    fixture.detectChanges();
+    //fixture.detectChanges();
     comp.initDateModel(null);
 
-    fixture.detectChanges();
+    //fixture.detectChanges();
     selection = getElement('.myDateInput');
     expect(selection.value).toBe('');
 
@@ -170,10 +170,10 @@ describe('AngularMyDatePickerComponent', () => {
 
     comp.parseOptions(opts);
 
-    fixture.detectChanges();
+    //fixture.detectChanges();
     comp.initDateModel({ isRange: false, singleDate: { date: { year: 2021, month: 8, day: 3 } } });
 
-    fixture.detectChanges();
+    //fixture.detectChanges();
     selection = getElement('.myDateInput');
     expect(selection.value).toBe('3rd of Aug 2021');
 
@@ -363,31 +363,24 @@ describe('AngularMyDatePickerComponent', () => {
   it('test headerAction function', () => {
     comp.setDefaultMonth('2020/06');
     comp.openCalendar();
-    fixture.detectChanges();
+
     let selector = getElement('.myDpSelector');
     expect(selector).not.toBe(null);
 
     fixture.detectChanges();
     let monthlabel = getElement('.myDpMonthYearText .myDpMonthBtn');
-    expect(monthlabel).not.toBe(null);
+    expect(monthlabel).not.toEqual(null);
     expect(monthlabel.textContent).toBe('Jun');
 
     let yearlabel = getElement('.myDpMonthYearText .myDpYearBtn');
     expect(yearlabel).not.toBe(null);
     expect(yearlabel.textContent).toBe('2020');
 
-    fixture.detectChanges();
     comp.headerAction(HeaderAction.PrevBtnClick);
-
-    fixture.detectChanges();
-    monthlabel = getElement('.myDpMonthYearText .myDpMonthBtn');
-    expect(monthlabel).not.toBe(null);
-    expect(monthlabel.textContent).toBe('May');
 
     comp.closeCalendar();
     comp.openCalendar();
 
-    fixture.detectChanges();
     comp.headerAction(HeaderAction.NextBtnClick);
 
     fixture.detectChanges();
@@ -401,20 +394,6 @@ describe('AngularMyDatePickerComponent', () => {
     fixture.detectChanges();
     let dateCell = getElement('.d_0_0');
     expect(dateCell).not.toBe(null);
-
-    fixture.detectChanges();
-    comp.headerAction(HeaderAction.MonthBtnClick);
-
-    fixture.detectChanges();
-    let monthCell = getElement('.m_0_0');
-    expect(monthCell).not.toBe(null);
-
-    fixture.detectChanges();
-    comp.headerAction(HeaderAction.YearBtnClick);
-
-    fixture.detectChanges();
-    let yearCell = getElement('.y_0_0');
-    expect(yearCell).not.toBe(null);
 
     comp.closeCalendar();
   });

@@ -1,9 +1,11 @@
 <div class="datepickercontainer">
-    <div class="datepickerelement" name="mydivdate" [(ngModel)]="model" [options]="myDatePickerOptions"
-        angular-mydatepicker #dp="angular-mydatepicker" [ngClass]="{'placeholdercolor': !dp.isDateValid()}"
-        (dateChanged)="onDateChanged($event)" (click)="dp.toggleCalendar()"></div>
+  <div class="datepickerelement" name="mydivdate" [(ngModel)]="model" [options]="myDatePickerOptions"
+    angular-mydatepicker #dp="angular-mydatepicker" [ngClass]="{'placeholdercolor': !dp.isDateValid()}"
+  (dateChanged)="onDateChanged($event)" (click)="dp.toggleCalendar()"></div>
 
-    <div class="closeIconContainer">
-        <i *ngIf="dp.isDateValid()" class="fa fa-close" (click)="dp.clearDate()"></i>
-    </div>
+  <div class="closeIconContainer">
+    @if (dp.isDateValid()) {
+      <i class="fa fa-close" (click)="dp.clearDate()"></i>
+    }
+  </div>
 </div>

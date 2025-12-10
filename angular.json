@@ -11,7 +11,7 @@
       "schematics": {},
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:application",
+          "builder": "@angular/build:application",
           "options": {
             "outputPath": {
               "base": "dist/angular-mydatepicker-example"
@@ -64,7 +64,7 @@
           "defaultConfiguration": ""
         },
         "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
+          "builder": "@angular/build:dev-server",
           "options": {
             "buildTarget": "angular-mydatepicker-example:build"
           },
@@ -75,14 +75,15 @@
           }
         },
         "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "builder": "@angular/build:extract-i18n",
           "options": {
             "buildTarget": "angular-mydatepicker-example:build"
           }
         },
         "test": {
-          "builder": "@angular-devkit/build-angular:karma",
+          "builder": "@angular/build:unit-test",
           "options": {
+            "runner": "karma",
             "main": "example/test.ts",
             "polyfills": "example/polyfills.ts",
             "tsConfig": "example/tsconfig.spec.json",
@@ -106,7 +107,7 @@
       "prefix": "lib",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "builder": "@angular/build:ng-packagr",
           "options": {
             "tsConfig": "projects/angular-mydatepicker/tsconfig.lib.json",
             "project": "projects/angular-mydatepicker/ng-package.json"
@@ -118,7 +119,7 @@
           }
         },
         "test": {
-          "builder": "@angular-devkit/build-angular:karma",
+          "builder": "@angular/build:karma",
           "options": {
             "main": "projects/angular-mydatepicker/src/test.ts",
             "tsConfig": "projects/angular-mydatepicker/tsconfig.spec.json",

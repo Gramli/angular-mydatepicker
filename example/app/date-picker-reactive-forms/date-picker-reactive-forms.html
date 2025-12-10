@@ -4,30 +4,34 @@
       <form class="form" [formGroup]="myForm" (ngSubmit)="onSubmitReactiveForms()" novalidate>
         <div class="input-group">
           <input class="form-control my-1" placeholder="Select a date" angular-mydatepicker name="reactiveFormsDate" formControlName="myDate"
-                 [options]="myDatePickerOptions" #dp="angular-mydatepicker" autocomplete="off" (click)="toggleCalendar()"/>
-          <div class="input-group-append">
-            <button type="button" class="btn btn-secondary mx-0" (click)="dp.clearDate()">
-              <i class="fa fa-close"></i>
-            </button>
+            [options]="myDatePickerOptions" #dp="angular-mydatepicker" autocomplete="off" (click)="toggleCalendar()"/>
+            <div class="input-group-append">
+              <button type="button" class="btn btn-secondary mx-0" (click)="dp.clearDate()">
+                <i class="fa fa-close"></i>
+              </button>
+            </div>
+            <div class="input-group-append">
+              <button type="button" class="btn btn-secondary mx-0" (click)="dp.toggleCalendar()">
+                <i class="fa fa-calendar-o"></i>
+              </button>
+            </div>
           </div>
-          <div class="input-group-append">
-            <button type="button" class="btn btn-secondary mx-0" (click)="dp.toggleCalendar()">
-              <i class="fa fa-calendar-o"></i>
-            </button>
+
+          <div class="btnGroup">
+            <button class="button" type="submit">Submit</button>
+            <button class="button" type="button" (click)="setTodayDate()">Set Today</button>
+            <button class="button" type="button" (click)="resetTomorrowDate()">Reset Tomorrow</button>
+            <button class="button" type="button" (click)="clearDate()">Set Empty</button>
+            <button class="button" type="button" (click)="disable()">{{!disabled ? 'Disable' : 'Enable'}}</button>
+            @if (myForm.controls.myDate.errors && myForm.controls.myDate.errors.required) {
+              <p class="error">Date is required!</p>
+            }
+            @if (myForm.controls.myDate.errors && myForm.controls.myDate.errors.invalidDateFormat) {
+              <p class="error">Invalid date format!</p>
+            }
           </div>
-        </div>
+        </form>
 
-        <div class="btnGroup">
-          <button class="button" type="submit">Submit</button>
-          <button class="button" type="button" (click)="setTodayDate()">Set Today</button>
-          <button class="button" type="button" (click)="resetTomorrowDate()">Reset Tomorrow</button>
-          <button class="button" type="button" (click)="clearDate()">Set Empty</button>
-          <button class="button" type="button" (click)="disable()">{{!disabled ? 'Disable' : 'Enable'}}</button>
-          <p class="error" *ngIf="myForm.controls.myDate.errors && myForm.controls.myDate.errors.required">Date is required!</p>
-          <p class="error" *ngIf="myForm.controls.myDate.errors && myForm.controls.myDate.errors.invalidDateFormat">Invalid date format!</p>
-        </div>
-      </form>
-
-    </td>
-  </tr>
-</table>
+      </td>
+    </tr>
+  </table>

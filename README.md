@@ -1,7 +1,6 @@
 # angular-mydatepicker
 
 [![Build&Test](https://github.com/Gramli/angular-mydatepicker/actions/workflows/build_and_test.yml/badge.svg)](https://github.com/Gramli/angular-mydatepicker/actions/workflows/build_and_test.yml)
-[![codecov](https://codecov.io/gh/gramli/angular-mydatepicker/branch/master/graph/badge.svg)](https://codecov.io/gh/gramli/angular-mydatepicker)
 [![npm version](https://badge.fury.io/js/gramli-angular-mydatepicker.svg)](https://www.npmjs.com/package/gramli-angular-mydatepicker)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 

@@ -1,9 +1,41 @@
 .datePicker {
-  margin-top: 20px
+  margin-top: var(--spacing-md, 24px);
+  background: var(--surface, #ffffff);
+  border-radius: var(--radius-lg, 12px);
+  padding: var(--spacing-sm, 16px);
+  box-shadow: var(--shadow-md, 0 4px 6px -1px rgba(0, 0, 0, 0.1));
 }
 
 .submitButton,
 .headerActionButton {
-  margin-top: 20px;
+  margin-top: var(--spacing-md, 24px);
+  padding: 10px 20px;
+  border: none;
+  border-radius: var(--radius-md, 8px);
+  font-size: 14px;
+  font-weight: 500;
   cursor: pointer;
+  transition: var(--transition, all 0.2s ease);
+  background: var(--primary-color, #49a6d8);
+  color: #ffffff;
+  box-shadow: var(--shadow-sm, 0 1px 2px 0 rgba(0, 0, 0, 0.05));
+}
+
+.submitButton:hover,
+.headerActionButton:hover {
+  background: var(--primary-dark, #87c38f);
+  box-shadow: var(--shadow-md, 0 4px 6px -1px rgba(0, 0, 0, 0.1));
+  transform: translateY(-1px);
+}
+
+.submitButton:active,
+.headerActionButton:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-sm, 0 1px 2px 0 rgba(0, 0, 0, 0.05));
+}
+
+.submitButton:focus,
+.headerActionButton:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
 }

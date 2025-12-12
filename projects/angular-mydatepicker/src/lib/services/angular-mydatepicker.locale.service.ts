@@ -134,6 +134,14 @@ export class LocaleService {
       sunHighlight: false,
       todayTxt: "Bugün"
     },
+    "pt": {
+      dayLabels: {su: "Dom", mo: "Seg", tu: "Ter", we: "Qua", th: "Qui", fr: "Sex", sa: "Sáb"},
+      monthLabels: { 1: "Jan", 2: "Fev", 3: "Mar", 4: "Abr", 5: "Mai", 6: "Jun", 7: "Jul", 8: "Ago", 9: "Set", 10: "Out", 11: "Nov", 12: "Dez" },
+      dateFormat: "dd-mm-yyyy",
+      firstDayOfWeek: "mo",
+      sunHighlight: false,
+      todayTxt: "Hoje"
+    },
     "pt-br": {
       dayLabels: {su: "Dom", mo: "Seg", tu: "Ter", we: "Qua", th: "Qui", fr: "Sex", sa: "Sab"},
       monthLabels: { 1: "Jan", 2: "Fev", 3: "Mar", 4: "Abr", 5: "Mai", 6: "Jun", 7: "Jul", 8: "Ago", 9: "Set", 10: "Out", 11: "Nov", 12: "Dez" },
@@ -189,6 +197,14 @@ export class LocaleService {
       firstDayOfWeek: "mo",
       sunHighlight: true,
       todayTxt: "ယနေ့"
+    },
+    "ms": {
+      dayLabels: {su: "Ahd", mo: "Isn", tu: "Sel", we: "Rab", th: "Kha", fr: "Jum", sa: "Sab"},
+      monthLabels: {1: "Jan", 2: "Feb", 3: "Mac", 4: "Apr", 5: "Mei", 6: "Jun", 7: "Jul", 8: "Ogo", 9: "Sep", 10: "Okt", 11: "Nov", 12: "Dis"},
+      dateFormat: "dd-mm-yyyy",
+      firstDayOfWeek: "su",
+      sunHighlight: true,
+      todayTxt: "Hari ini"
     },
     "sk": {
       dayLabels: { su: "Ne", mo: "Po", tu: "Ut", we: "St", th: "Št", fr: "Pi", sa: "So" },
@@ -392,10 +408,8 @@ export class LocaleService {
     }
   };
 
-  getLocaleOptions(locale = DEFAULT_LOCALE): IMyOptions {
-    // Convert locale to lowercase - i.e. support passing uppercase region subtags
+  getLocaleOptions(locale: string = DEFAULT_LOCALE): IMyOptions {
     const lowerCaseLocale = locale.toLowerCase()
-    // If locale exists, return it, else return default locale (en)
-    return this.locales.hasOwnProperty(lowerCaseLocale) ? this.locales[lowerCaseLocale] : this.locales[DEFAULT_LOCALE];
+    return this.locales[lowerCaseLocale] || this.locales[DEFAULT_LOCALE];
   }
 }

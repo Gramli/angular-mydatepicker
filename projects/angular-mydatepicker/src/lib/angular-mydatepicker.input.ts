@@ -62,6 +62,11 @@ export class AngularMyDatePickerDirective implements OnChanges, OnDestroy, Contr
 
   private opts: IMyOptions;
 
+  // Cleanup tracking
+  private preventCloseTimeout: any = null;
+  private focusTimeout: any = null;
+  private animationTimeout: any = null;
+
   onChangeCb: (_: any) => void = () => { };
   onTouchedCb: () => void = () => { };
 
@@ -208,6 +213,27 @@ export class AngularMyDatePickerDirective implements OnChanges, OnDestroy, Contr
 
   public ngOnDestroy(): void {
     this.closeCalendar();
+    this.clearAllTimeouts();
+    this.removeDocumentClickListener();
+  }
+
+  private clearAllTimeouts(): void {
+    if (this.preventCloseTimeout) {
+      clearTimeout(this.preventCloseTimeout);
+      this.preventCloseTimeout = null;
+    }
+    if (this.focusTimeout) {
+      clearTimeout(this.focusTimeout);
+      this.focusTimeout = null;
+    }
+    if (this.animationTimeout) {
+      clearTimeout(this.animationTimeout);
+      this.animationTimeout = null;
+    }
+  }
+
+  private removeDocumentClickListener(): void {
+    document.removeEventListener(CLICK, this.onClickWrapper);
   }
 
   public setLocaleOptions(): void {
@@ -392,8 +418,12 @@ export class AngularMyDatePickerDirective implements OnChanges, OnDestroy, Contr
         document.addEventListener(CLICK, this.onClickWrapper);
       }
     }
-    setTimeout(() => {
+    if (this.preventCloseTimeout) {
+      clearTimeout(this.preventCloseTimeout);
+    }
+    this.preventCloseTimeout = setTimeout(() => {
       this.preventClose = false;
+      this.preventCloseTimeout = null;
     }, PREVENT_CLOSE_TIMEOUT);
   }
 
@@ -508,6 +538,10 @@ export class AngularMyDatePickerDirective implements OnChanges, OnDestroy, Contr
   private animationEnd(reason: number): void {
     if (this.cRef) {
       this.cRef.instance.selectorEl.nativeElement.removeEventListener(ANIMATION_END, this.onAnimateWrapper);
+      if (this.animationTimeout) {
+        clearTimeout(this.animationTimeout);
+        this.animationTimeout = null;
+      }
       this.removeComponent();
       this.emitCalendarToggle(reason);
     }
@@ -523,14 +557,17 @@ export class AngularMyDatePickerDirective implements OnChanges, OnDestroy, Contr
         instance.setCalendarAnimation(calendarAnimation, false);
 
         // In case the animationend event is not fired
-        setTimeout(this.onAnimateWrapper.bind(this, reason), ANIMATION_TIMEOUT);
+        if (this.animationTimeout) {
+          clearTimeout(this.animationTimeout);
+        }
+        this.animationTimeout = setTimeout(this.onAnimateWrapper.bind(this, reason), ANIMATION_TIMEOUT);
       }
       else {
         this.removeComponent();
         this.emitCalendarToggle(reason);
       }
 
-      document.removeEventListener(CLICK, this.onClickWrapper);
+      this.removeDocumentClickListener();
     }
   }
 
@@ -555,8 +592,14 @@ export class AngularMyDatePickerDirective implements OnChanges, OnDestroy, Contr
   private focusToInput(): void {
     const {focusInputOnDateSelect, divHostElement} = this.opts;
     if (focusInputOnDateSelect && !divHostElement.enabled) {
-      setTimeout(() => {
-        this.elem.nativeElement.focus();
+      if (this.focusTimeout) {
+        clearTimeout(this.focusTimeout);
+      }
+      this.focusTimeout = setTimeout(() => {
+        if (this.elem && this.elem.nativeElement) {
+          this.elem.nativeElement.focus();
+        }
+        this.focusTimeout = null;
       });
     }
   }

@@ -1,35 +1,43 @@
-<div class="maintitle">
-  <div>angular-mydatepicker</div>
-</div>
-<div class="pagecontent">
-  <div>
-    <h4>ngModel example</h4>
-    <div class="normalmode">
-      <date-picker-ngmodel>loading...</date-picker-ngmodel>
-    </div>
+<nav class="navbar">
+  <div class="navbar-brand">angular-mydatepicker</div>
+  <div class="navbar-buttons">
+    <button class="nav-btn" [class.active]="activeTab === 'ngmodel'" type="button" (click)="setActiveTab('ngmodel')">ngModel</button>
+    <button class="nav-btn" [class.active]="activeTab === 'reactive'" type="button"  (click)="setActiveTab('reactive')">Reactive Forms</button>
+    <button class="nav-btn" [class.active]="activeTab === 'divhost'" type="button" (click)="setActiveTab('divhost')">Div Host</button>
+    <button class="nav-btn" [class.active]="activeTab === 'inline'" type="button" (click)="setActiveTab('inline')">Inline</button>
   </div>
-  <div class="flexcontainer">
-    <div class="flexitem">
-        <h4>Reactive forms example</h4>
-        <div class="normalmode">
-          <date-picker-reactive-forms>loading...</date-picker-reactive-forms>
-        </div>
-    </div>
+</nav>
 
-    <div class="flexitem">
-        <h4>Div host element example</h4>
-        <div class="normalmode">
-            <date-picker-div-host-element>loading...</date-picker-div-host-element>
-        </div>
-    </div>
-
-    <div class="flexitem">
-        <h4>Inline example</h4>
-        <div class="normalmode">
-          <date-picker-inline>loading...</date-picker-inline>
-        </div>
-    </div>
-
+<div class="pagecontent">
+  <div class="content-container">
+    @if (activeTab === 'ngmodel') {
+      <div class="content-panel">
+        <h3 class="panel-title">ngModel Two-Way Binding</h3>
+        <p class="panel-subtitle">Complete feature showcase with extensive configuration options</p>
+        <date-picker-ngmodel>loading...</date-picker-ngmodel>
+      </div>
+    }
+    @if (activeTab === 'reactive') {
+      <div class="content-panel">
+        <h3 class="panel-title">Reactive Forms Integration</h3>
+        <p class="panel-subtitle">FormControl and FormGroup validation with reactive forms</p>
+        <date-picker-reactive-forms>loading...</date-picker-reactive-forms>
+      </div>
+    }
+    @if (activeTab === 'divhost') {
+      <div class="content-panel">
+        <h3 class="panel-title">Div Host Element</h3>
+        <p class="panel-subtitle">Custom host element instead of standard input field</p>
+        <date-picker-div-host-element>loading...</date-picker-div-host-element>
+      </div>
+    }
+    @if (activeTab === 'inline') {
+      <div class="content-panel">
+        <h3 class="panel-title">Inline Calendar</h3>
+        <p class="panel-subtitle">Always-visible calendar without input field</p>
+        <date-picker-inline>loading...</date-picker-inline>
+      </div>
+    }
   </div>
 </div>
 

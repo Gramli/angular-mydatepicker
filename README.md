@@ -422,4 +422,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Credits
 
-Originally created by [kekeh](https://github.com/kekeh) and [nodro7](https://github.com/nodro7) and. Currently maintained by [Gramli](https://github.com/Gramli).
+Originally created by [kekeh](https://github.com/kekeh) and [nodro7](https://github.com/nodro7). Currently maintained by [Gramli](https://github.com/Gramli).

@@ -38,7 +38,8 @@ body {
   position: sticky;
   top: 0;
   z-index: 1000;
-  justify-content: left
+  justify-content: space-between;
+  align-items: center;
 }
 
 .navbar-brand {
@@ -47,6 +48,40 @@ body {
   font-weight: 700;
   letter-spacing: -0.5px;
   padding-left: 1rem;
+}
+
+.navbar-buttons {
+  display: flex;
+  gap: 12px;
+  align-items: left;
+}
+
+.navbar-icons {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  padding-right: 1rem;
+}
+
+.icon-link {
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+  text-decoration: none;
+}
+
+.icon-link:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+.icon-link svg {
+  width: 24px;
+  height: 24px;
 }
 
 .nav-btn {
@@ -144,6 +179,10 @@ body {
   .nav-btn {
     flex: 1;
     min-width: 100px;
+  }
+  
+  .navbar-icons {
+    order: -1;
   }
 }
 

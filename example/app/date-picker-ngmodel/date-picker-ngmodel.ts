@@ -97,7 +97,9 @@ export class DatePickerNgmodel implements OnInit {
     'it | Italian',
     'it-ch | Italian - Switzerland',
     'pl | Polish',
+    'pt | Portuguese',
     'my | Burmese',
+    'ms | Malay',
     'sk | Slovak',
     'sl | Slovenian',
     'zh-cn | Chinese - China',
@@ -1019,9 +1021,7 @@ export class DatePickerNgmodel implements OnInit {
     console.log('onInit(): SampleDatePickerNgModel');
   }
 
-  // callbacks
   onDateChanged(event: IMyDateModel): void {
-    console.log('onDateChanged(): ', event);
 
     if (!event.isRange) {
       let { date, jsDate, formatted, epoc } = event.singleDate;
@@ -1036,6 +1036,7 @@ export class DatePickerNgmodel implements OnInit {
     }
     else {
       let { formatted } = event.dateRange;
+      console.log('onDateChanged(): formatted: ', formatted);
       if (formatted !== '') {
         this.selectedTextNormal = 'Formatted: ' + formatted;
         this.validDate = true;

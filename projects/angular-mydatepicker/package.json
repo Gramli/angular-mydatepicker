@@ -1,6 +1,6 @@
 {
   "name": "gramli-angular-mydatepicker",
-  "version": "21.0.0",
+  "version": "21.0.1",
   "description": "A highly configurable Angular datepicker and date range picker with no external dependencies. Lightweight, flexible, and feature-rich.",
   "keywords": [
     "angular",

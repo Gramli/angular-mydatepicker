@@ -1,31 +1,65 @@
 .datepickercontainer {
   position: relative;
   display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .datepickerelement {
-  border: 1px solid #ced4da;
-  border-radius: 4px;
-  padding: 6px 8px;
-  width: 260px;
-  font-size: 16px;
-  color: #495057;
+  border: 2px solid var(--border-color, #e2e8f0);
+  border-radius: var(--radius-md, 8px);
+  padding: 12px 16px;
+  width: 280px;
+  font-size: 15px;
+  color: var(--text-primary, #1e293b);
   cursor: pointer;
+  background-color: var(--surface, #ffffff);
+  transition: var(--transition, all 0.2s ease);
+  box-shadow: var(--shadow-sm, 0 1px 2px 0 rgba(0, 0, 0, 0.05));
+  outline: none;
+}
+
+.datepickerelement:hover {
+  border-color: var(--primary-light, #60a5fa);
+  box-shadow: var(--shadow-md, 0 4px 6px -1px rgba(0, 0, 0, 0.1));
+}
+
+.datepickerelement:focus {
+  border-color: var(--primary-color, #3b82f6);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
 }
 
 .placeholdercolor {
-  color: #bbb;
+  color: var(--text-secondary, #94a3b8);
+  font-style: italic;
 }
 
 .closeIconContainer {
-  margin: auto 0 auto -26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  margin-left: -32px;
   cursor: pointer;
+  color: var(--text-secondary, #64748b);
+  transition: var(--transition, all 0.2s ease);
+  border-radius: 50%;
 }
 
 .closeIconContainer:hover {
-  color: #bbb;
+  color: var(--text-primary, #1e293b);
+  background-color: var(--background, #f1f5f9);
+  transform: scale(1.1);
+}
+
+.closeIconContainer:active {
+  transform: scale(0.95);
 }
 
 .buttons {
-  margin-top: 20px;
+  margin-top: var(--spacing-md, 24px);
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
 }

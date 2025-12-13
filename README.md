@@ -231,7 +231,7 @@ The datepicker supports 40+ locales out of the box. Set the `locale` attribute t
 
 #### Supported Locales
 
-`en`, `fr`, `fr-ch`, `ja`, `fi`, `es`, `hu`, `sv`, `nl`, `ru`, `uk`, `uz`, `no`, `tr`, `pt-br`, `de`, `de-ch`, `it`, `it-ch`, `pl`, `my`, `sk`, `sl`, `zh-cn`, `he`, `ro`, `ca`, `id`, `en-au`, `en-gb`, `am-et`, `cs`, `el`, `kk`, `th`, `ko-kr`, `da`, `lt`, `vi`, `bn`, `bg`, `hr`, `ar`, `is`, `tw`, `lv`, `et`
+`en`, `fr`, `fr-ch`, `ja`, `fi`, `es`, `hu`, `sv`, `nl`, `ru`, `uk`, `uz`, `no`, `tr`, `pt-br`, `pt`, `de`, `de-ch`, `it`, `it-ch`, `pl`, `my`, `ms`, `sk`, `sl`, `zh-cn`, `he`, `ro`, `ca`, `id`, `en-au`, `en-gb`, `am-et`, `cs`, `el`, `kk`, `th`, `ko-kr`, `da`, `lt`, `vi`, `bn`, `bg`, `hr`, `ar`, `is`, `tw`, `lv`, `et`
 
 > [!TIP]
 > To add a new locale, submit a PR updating the [locale service](https://github.com/gramli/angular-mydatepicker/blob/master/projects/angular-mydatepicker/src/lib/services/angular-mydatepicker.locale.service.ts).
@@ -422,4 +422,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Credits
 
-Originally created by [kekeh](https://github.com/kekeh) and [nodro7](https://github.com/nodro7) and. Currently maintained by [Gramli](https://github.com/Gramli).
+Originally created by [kekeh](https://github.com/kekeh) and [nodro7](https://github.com/nodro7). Currently maintained by [Gramli](https://github.com/Gramli).

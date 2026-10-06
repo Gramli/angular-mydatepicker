@@ -95,6 +95,7 @@ export class MyComponent {
 
 | Package Version | Angular Version |
 |----------------|-----------------|
+| `22.0.x`       | `22.x`         |
 | `21.0.x`       | `21.x`         |
 | `0.18.x`       | `20.x`         |
 | `0.17.x`       | `19.x`         |

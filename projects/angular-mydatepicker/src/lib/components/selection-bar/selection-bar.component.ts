@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnChanges, Output, ViewEncapsulation, SimpleChanges} from "@angular/core";
+import {Component, EventEmitter, Input, OnChanges, Output, ViewEncapsulation, SimpleChanges, ChangeDetectionStrategy} from "@angular/core";
 import {IMyMonth} from "../../interfaces/my-month.interface";
 import {IMyOptions} from "../../interfaces/my-options.interface";
 import {OPTS, YEARS_DURATION, VISIBLE_MONTH, SELECT_MONTH, SELECT_YEAR, PREV_VIEW_DISABLED, NEXT_VIEW_DISABLED} from "../../constants/constants"
@@ -7,6 +7,7 @@ import {OPTS, YEARS_DURATION, VISIBLE_MONTH, SELECT_MONTH, SELECT_YEAR, PREV_VIE
     selector: "lib-selection-bar",
     templateUrl: "./selection-bar.component.html",
     encapsulation: ViewEncapsulation.None,
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class SelectionBarComponent implements OnChanges {

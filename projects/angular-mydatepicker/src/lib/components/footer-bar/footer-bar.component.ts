@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnChanges, Output, SimpleChanges, ViewEncapsulation} from "@angular/core";
+import {Component, EventEmitter, Input, OnChanges, Output, SimpleChanges, ViewEncapsulation, ChangeDetectionStrategy} from "@angular/core";
 import {IMyOptions} from "../../interfaces/my-options.interface";
 import {UtilService} from "../../services/angular-mydatepicker.util.service";
 import {OPTS, SPACE_STR, EMPTY_STR} from "../../constants/constants";
@@ -8,6 +8,7 @@ import {OPTS, SPACE_STR, EMPTY_STR} from "../../constants/constants";
     templateUrl: "./footer-bar.component.html",
     providers: [UtilService],
     encapsulation: ViewEncapsulation.None,
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class FooterBarComponent implements OnChanges {

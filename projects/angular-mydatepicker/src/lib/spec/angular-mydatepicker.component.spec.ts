@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import {FormsModule} from '@angular/forms';
 import {By} from '@angular/platform-browser';
-import {Component, DebugElement, ViewChild} from '@angular/core';
+import {Component, DebugElement, ViewChild, ChangeDetectionStrategy} from '@angular/core';
 import {AngularMyDatePickerModule} from '../angular-mydatepicker.module';
 import {AngularMyDatePickerDirective} from '../angular-mydatepicker.input';
 import {IAngularMyDpOptions, IMyOptions} from '../interfaces/my-options.interface';
@@ -31,6 +31,7 @@ function getTodayDate(): string {
 
 @Component({
     template: '<input style="width: 400px;" class="myDateInput" type="{{inputType}}" id="myDateInput" [options]="options" name="mydate" angular-mydatepicker #dp="angular-mydatepicker" />',
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 class AngularMyDatepickerTestComponent {

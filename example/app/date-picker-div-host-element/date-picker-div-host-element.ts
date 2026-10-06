@@ -1,10 +1,11 @@
-import {Component, OnInit,} from '@angular/core';
+import {Component, OnInit, ChangeDetectionStrategy} from '@angular/core';
 import {IAngularMyDpOptions, IMyDateModel} from '../../../projects/angular-mydatepicker/src/public-api';
 
 @Component({
     selector: 'date-picker-div-host-element',
     templateUrl: './date-picker-div-host-element.html',
     styleUrls: ['./date-picker-div-host-element.css'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class DatePickerDivHostElement implements OnInit {

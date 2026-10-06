@@ -43,8 +43,9 @@ Proceed with authorized routine work; clarify only choices that affect scope or 
 
 For an eligible no-op, check the existing runtime and installation, then validate
 and report through section 5. Skip branch creation, baseline installation and
-upgrade transitions. Leave dependencies and tracked files untouched; report
-unavailable checks instead of repairing the project merely to validate it.
+upgrade transitions. The final isolated npm verification below still applies.
+Leave the live installation and user files untouched; a required lockfile repair
+ends the no-op path and must follow the protected mutation workflow.
 
 Record the starting branch/HEAD and staged, unstaged and untracked changes. Before
 project mutations, establish and verify an upgrade branch/worktree unless the
@@ -124,12 +125,22 @@ Use SUCCESS only when the requested target is satisfied, coordinated packages an
 actual Node/TypeScript/RxJS meet supported ranges, required migrations are complete,
 user changes are preserved, installation/required builds and runtime checks pass,
 and configured tests/lint pass or have demonstrably unchanged baseline failures.
-A missing build or required runtime check prevents success. Label a validated no-op explicitly.
+For npm workspaces, SUCCESS also requires the [final clean-directory npm check](references/validation.md#final-clean-directory-npm-verification),
+using supported Node, CI's npm version and enabled lifecycle scripts. This includes
+no-op checks: dry runs and installs in the existing workspace are insufficient.
+Repair a failing lockfile with the repository manager. If targeted repair fails,
+use the validation reference's controlled full-regeneration fallback in an isolated
+copy. Review dependency changes, rerun affected checks against the repaired graph,
+and repeat fresh-directory npm ci while preserving the live installation.
+A missing build, required runtime check or clean npm check prevents success.
+Label a validated no-op explicitly.
 Use PARTIAL when a validated transition completed but the target or required
 evidence remains incomplete; otherwise use BLOCKED and disclose any partial edits.
 
 Report source/requested/actual versions, branch/worktree and uncommitted state,
 completed path, last validated state, meaningful changes, validation evidence,
-remaining work and official sources with guide selections/fallback. Adapt
+remaining work and official sources with guide selections/fallback. For the clean
+npm check, report its command, Node/npm versions, platform and result; disclose
+unavailable native CI-platform verification. Adapt
 [the report template](assets/report-template.md) when composing the response;
 respect the user's requested output format.

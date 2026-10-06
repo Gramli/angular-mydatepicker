@@ -1,4 +1,4 @@
-import {Component, OnInit, Renderer2, ViewChild, ChangeDetectorRef} from '@angular/core';
+import {Component, OnInit, Renderer2, ViewChild, ChangeDetectorRef, ChangeDetectionStrategy} from '@angular/core';
 import {UntypedFormGroup, UntypedFormBuilder, Validators} from '@angular/forms';
 import {IAngularMyDpOptions, IMyDateModel, AngularMyDatePickerDirective} from '../../../projects/angular-mydatepicker/src/public-api';
 
@@ -6,6 +6,7 @@ import {IAngularMyDpOptions, IMyDateModel, AngularMyDatePickerDirective} from '.
     selector: 'date-picker-reactive-forms',
     templateUrl: './date-picker-reactive-forms.html',
     styleUrls: ['./date-picker-reactive-forms.css'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class DatePickerReactiveForms implements OnInit {

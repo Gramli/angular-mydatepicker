@@ -1,4 +1,4 @@
-import {Component, ElementRef, ViewEncapsulation, ViewChild, Renderer2, ChangeDetectorRef, AfterViewInit, OnDestroy, HostBinding} from "@angular/core";
+import {Component, ElementRef, ViewEncapsulation, ViewChild, Renderer2, ChangeDetectorRef, AfterViewInit, OnDestroy, HostBinding, ChangeDetectionStrategy} from "@angular/core";
 import {IMyDate} from "../../interfaces/my-date.interface";
 import {IMyDateRange} from "../../interfaces/my-date-range.interface";
 import {IMyMonth} from "../../interfaces/my-month.interface";
@@ -30,6 +30,7 @@ import {DOT, UNDER_LINE, D, M, Y, DATE_ROW_COUNT, DATE_COL_COUNT, MONTH_ROW_COUN
     styleUrls: ['../../css/angular-mydatepicker.style.css'],
     providers: [UtilService],
     encapsulation: ViewEncapsulation.None,
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class CalendarComponent implements AfterViewInit, OnDestroy {

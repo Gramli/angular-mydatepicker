@@ -1,6 +1,6 @@
 {
   "name": "angular-mydatepicker-example",
-  "version": "21.0.0",
+  "version": "22.0.0",
   "description": "A highly configurable Angular datepicker and date range picker with no external dependencies. Lightweight, flexible, and feature-rich.",
   "keywords": [
     "angular",
@@ -27,6 +27,9 @@
     "type": "git",
     "url": "https://github.com/gramli/angular-mydatepicker.git"
   },
+  "engines": {
+    "node": "^22.22.3 || ^24.15.0 || ^26.0.0"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -37,42 +40,43 @@
     "lint-lib": "ng lint AngularMyDatePicker"
   },
   "dependencies": {
-    "@angular/animations": "^21.0.3",
-    "@angular/common": "^21.0.3",
-    "@angular/compiler": "^21.0.3",
-    "@angular/core": "^21.0.3",
-    "@angular/forms": "^21.0.3",
-    "@angular/platform-browser": "^21.0.3",
-    "@angular/platform-browser-dynamic": "^21.0.3",
-    "@angular/router": "^21.0.3",
+    "@angular/animations": "^22.2.1",
+    "@angular/common": "^22.2.1",
+    "@angular/compiler": "^22.2.1",
+    "@angular/core": "^22.2.1",
+    "@angular/forms": "^22.2.1",
+    "@angular/platform-browser": "^22.2.1",
+    "@angular/platform-browser-dynamic": "^22.2.1",
+    "@angular/router": "^22.2.1",
     "rxjs": "~7.8.2",
     "tslib": "^2.0.0",
     "zone.js": "^0.16.0"
   },
   "devDependencies": {
-    "@angular-eslint/builder": "^18.3.1",
-    "@angular-eslint/eslint-plugin": "^18.3.1",
-    "@angular-eslint/eslint-plugin-template": "^18.3.1",
-    "@angular-eslint/schematics": "^18.3.1",
-    "@angular-eslint/template-parser": "^18.3.1",
-    "@angular/build": "^21.0.2",
-    "@angular/cli": "^21.0.2",
-    "@angular/compiler-cli": "^21.0.3",
-    "@angular/language-service": "^21.0.3",
+    "@angular-eslint/builder": "^22.5.0",
+    "@angular-eslint/eslint-plugin": "^22.5.0",
+    "@angular-eslint/eslint-plugin-template": "^22.5.0",
+    "@angular-eslint/schematics": "^22.5.0",
+    "@angular-eslint/template-parser": "^22.5.0",
+    "@angular/build": "^22.2.1",
+    "@angular/cli": "^22.2.1",
+    "@angular/compiler-cli": "^22.2.1",
+    "@angular/language-service": "^22.2.1",
     "@types/jasmine": "~5.1.13",
     "@types/jasminewd2": "~2.0.3",
-    "@types/node": "^12.11.1",
-    "@typescript-eslint/eslint-plugin": "^8.49.0",
-    "@typescript-eslint/parser": "^8.49.0",
+    "@types/node": "^26.6.4",
+    "@typescript-eslint/eslint-plugin": "^8.71.1",
+    "@typescript-eslint/parser": "^8.71.1",
     "eslint": "^9.39.1",
     "fs-extra": "^8.0.1",
+    "istanbul-lib-instrument": "^6.0.3",
     "jasmine-core": "^5.13.0",
     "karma": "^6.4.4",
     "karma-chrome-launcher": "~3.2.0",
     "karma-coverage": "^2.2.1",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "^2.1.0",
-    "ng-packagr": "^21.0.0",
-    "typescript": "^5.9.3"
+    "ng-packagr": "^22.2.4",
+    "typescript": "^6.0.3"
   }
 }

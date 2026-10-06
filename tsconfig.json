@@ -1,7 +1,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./",
+    "strict": false,
     "outDir": "./dist/out-tsc",
     "esModuleInterop": true,
     "sourceMap": true,
@@ -17,10 +17,10 @@
     ],
     "paths": {
       "angular-mydatepicker": [
-        "dist/angular-mydatepicker"
+        "./dist/angular-mydatepicker"
       ],
       "angular-mydatepicker/*": [
-        "dist/angular-mydatepicker/*"
+        "./dist/angular-mydatepicker/*"
       ]
     },
     "useDefineForClassFields": false

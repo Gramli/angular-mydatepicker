@@ -1,10 +1,11 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ChangeDetectionStrategy} from '@angular/core';
 import {IAngularMyDpOptions, IMyDateModel, IMyCalendarViewChanged, IMyRangeDateSelection} from '../../../projects/angular-mydatepicker/src/public-api';
 
 @Component({
     selector: 'date-picker-inline',
     templateUrl: './date-picker-inline.html',
     styleUrls: ['./date-picker-inline.css'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class DatePickerInline implements OnInit {

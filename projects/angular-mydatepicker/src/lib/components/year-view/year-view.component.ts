@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnChanges, AfterViewInit, Output, SimpleChanges, ViewEncapsulation} from "@angular/core";
+import {Component, EventEmitter, Input, OnChanges, AfterViewInit, Output, SimpleChanges, ViewEncapsulation, ChangeDetectionStrategy} from "@angular/core";
 import {IMyCalendarYear} from "../../interfaces/my-calendar-year.interface";
 import {IMyOptions} from "../../interfaces/my-options.interface";
 import {KeyCode} from "../../enums/key-code.enum";
@@ -11,6 +11,7 @@ import {YEARS, OPTS} from "../../constants/constants";
     templateUrl: "./year-view.component.html",
     providers: [UtilService],
     encapsulation: ViewEncapsulation.None,
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class YearViewComponent implements OnChanges, AfterViewInit {

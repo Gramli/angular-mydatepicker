@@ -10,5 +10,8 @@
   ],
   "include": [
     "example/**/*.d.ts"
-  ]
+  ],
+  "angularCompilerOptions": {
+    "strictTemplates": false
+  }
 }
